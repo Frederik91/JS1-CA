@@ -2,6 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/script.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/cc9325c3ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <section id="top-logo"><h2>Rainydays.</h2></section>
+      <section id="navbar">
+        <div class="nav-buttons">
+          <a href="index.html">Home</a>
+        </div>
+      </section>
+    </nav>
+
+    <header>
+      <div class="carousel">
+        <div class="slides">
+          <img
+            src="images/freepik__a-woman-standing-in-a-rainjacket-with-the-hood-on-__67728.jpeg"
+            alt="woman standing in the rain in a rainjacket smiling to the camera"
+          />
+          <img
+            src="images/freepik__a-woman-standing-in-a-rainjacket-with-the-hood-on-__67731.jpeg"
+            alt="woman standing in the rain in a rainjacket smiling to the camera"
+          />
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </header>
+    <main>
+      <section id="shop"><h1>Shop our jacket collections</h1>
+
+      <button class="filter-button" id="filter-butn">
+        <p>filter</p>
+        <i class="fa-solid fa-filter"></i>
+      </button>
+
+      <div id="filter-select">
+        <label for="gender-filter"></label>
+        <select id="gender-filter">
+          <option value="all">All</option>
+          <option value="Female">Womens</option>
+          <option value="Male">Mens</option>
+        </select>
+
+        <label>
+            <input type="checkbox" id="sale-filter"/>
+            On sale
+        </label>
+
+        <button id="use-filter">
+            Use Filter
+        </button>
+</section>
+      </div>
+      <section id="jackets"></section>
+    </main>
+  </body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
     <meta
       name="description"
       content="This is the homepage for the Rainydays online shop. Here you can view our product list and find your next rainjacket"
@@ -73,7 +146,7 @@
         />
       </div>
     </header> -->
-
+<!-- 
     <main>
       <div class="header-img">
         <img
@@ -84,7 +157,7 @@
       </div>
 
       <div class="maincontent">
-        <div class="header"><h1>Jackets of the year</h1></div>
+        <div class="header"><h1>Jackets of the year</h1></div> -->
 
       <!-- }
       <div id="gender-filtering">
@@ -102,13 +175,13 @@
                         <div id="loading"> Loading Products</div>
                         <div id="error"> An error occured</div>
                         <div id="products-container"></div> -->
-        <div class="view-all">
+        <!-- <div class="view-all">
           <div><button id="button-all"><h3>View all</h3></button></div>
           <div><button id="button-women"><h3>Womens</h3></button></div>
           <div><button id="button-men"><h3>Mens</h3></button></div>
       </div>
       <div id="product-list"></div>
-  </div>
+  </div> -->
         <!-- <div class="view-all">
           <div class="view-products"><button><h3>View all</h3></button></div>
           <div class="view-products"><button><h3>Womens</h3></button></div>
@@ -176,7 +249,7 @@
               tempratures get low<br /><br />799,-
             </p>
           </div> -->      
-          <div id="product-list"></div>
+          <!-- <div id="product-list"></div>
         </div>
       </div>
 
@@ -220,4 +293,4 @@
     <script src="js/api.js"></script>
     <script src="js/product.js"></script>
   </body>
-</html>
+</html> --> -->

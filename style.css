@@ -1,4 +1,140 @@
-body {
+.jacket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+  margin: 10vw 20vw 0 20vw;
+  gap: 5vw;
+}
+
+.jacket-grid img {
+  width: 20vw;
+}
+
+.jacket-discount {
+  text-decoration: line-through;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20vw;
+}
+
+#top-logo {
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+header button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+#filter-butn {
+  max-width: 10vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#shop {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-button {
+  background-color: #abc6ff; /* Grønn bakgrunn */
+  color: rgb(53, 53, 53);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.filter-button p {
+  margin: 0;
+  padding-right: 10px;
+}
+
+.filter-button i {
+  font-size: 20px;
+}
+
+#filter-select {
+  display: none; /* Skjul filterseksjonen som standard */
+  margin-top: 20px;
+}
+
+#filter-select label,
+#filter-select select,
+#filter-select input,
+#filter-select button {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 0 1vw 0;
+  background-color: #ffffff;
+  border-color: black;
+}
+
+#filter-select button {
+  background-color: #abc6ff;
+  color: rgb(53, 53, 53);
+  border: none;
+  padding: 1vw;
+  align-self: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* body {
   background-color: hsla(0, 0%, 85%, 0.5);
   font-family: "Playfair display", "Crimson text" Verdana, sans-serif;
   max-width: 100%;
@@ -332,4 +468,4 @@ footer img {
 header a {
   color: #000;
   text-decoration: none;
-}
+} */
