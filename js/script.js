@@ -19,6 +19,7 @@ getJackets();
 function renderJackets(product) {
   const jacketsGrid = document.getElementById("jackets"); //dette er section id'en fra html!
   jacketsGrid.className = "jacket-grid";
+  jacketsGrid.innerHTML = "";
 
   product.forEach((jacket) => {
     const jacketContainer = document.createElement("a");
@@ -74,6 +75,29 @@ document.getElementById("filter-butn").addEventListener("click", function () {
   } else {
     filterSelect.style.display = "none";
   }
+});
+
+document.querySelector("#use-filter").addEventListener("click", function () {
+  const genderFilter = document.querySelector("#gender-filter").value;
+  const saleFilter = document.querySelector("#sale-filter").checked;
+
+  const filteredProducts = jackets.filter((jacket) => {
+    if (genderFilter !== "all") {
+      if (saleFilter) {
+        return jacket.gender === genderFilter && jacket.onSale;
+      } else {
+        return jacket.gender === genderFilter;
+      }
+    }
+
+    if (saleFilter) {
+      return jacket.onSale;
+    }
+
+    return true;
+  });
+
+  renderJackets(filteredProducts);
 });
 
 // const apiUrl = "https://v2.api.noroff.dev/rainy-days";

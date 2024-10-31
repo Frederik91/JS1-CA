@@ -1,39 +1,57 @@
-.jacket-grid {
+#top-logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2vw;
+}
+
+#navbar {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-size: 1.8vw;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  justify-items: center;
-  margin: 10vw 20vw 0 20vw;
-  gap: 5vw;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
 }
 
-.jacket-grid img {
-  width: 20vw;
-}
-
-.jacket-discount {
-  text-decoration: line-through;
+#navbar a {
+  color: #000000;
 }
 
 nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20vw;
-}
-
-#top-logo {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 1vw 0 1vw 0;
 }
 
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 5vw 0 5vw;
 }
 
 header {
   display: flex;
   justify-content: center;
+}
+
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  color: #000000;
+  font-size: 2.5vw;
+  max-width: fit-content;
+  margin: 0 0 0 2vw;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+}
+
+p {
+  color: #000000;
+  font-size: 1.6vw;
 }
 
 .carousel {
@@ -60,7 +78,6 @@ header button {
   color: white;
   border: none;
   padding: 10px;
-  cursor: pointer;
 }
 
 .prev {
@@ -69,6 +86,10 @@ header button {
 
 .next {
   right: 10px;
+}
+
+button {
+  cursor: pointer;
 }
 
 #filter-butn {
@@ -88,50 +109,168 @@ header button {
 }
 
 .filter-button {
-  background-color: #abc6ff; /* Grønn bakgrunn */
+  background-color: #abc6ff;
   color: rgb(53, 53, 53);
   border: none;
-  padding: 10px 20px;
+  padding: 1vw 5vw 1vw 5vw;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.2vw;
   border-radius: 5px;
+  max-width: 10vw;
 }
 
 .filter-button p {
   margin: 0;
-  padding-right: 10px;
+  padding-right: 1.5vw;
+  font-family: sans-serif;
+  font-weight: 100;
 }
 
 .filter-button i {
-  font-size: 20px;
+  font-size: 1.2vw;
 }
 
 #filter-select {
   display: none; /* Skjul filterseksjonen som standard */
-  margin-top: 20px;
+  /* margin: 2vw; */
+  background-color: #abc6ff;
+  max-width: 30%;
+  padding: 3vw 0 2vw 2vw;
 }
 
-#filter-select label,
 #filter-select select,
-#filter-select input,
 #filter-select button {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
-  font-size: 16px;
-  padding: 0 0 1vw 0;
+  width: 75%;
+  font-size: 1.2vw;
+  margin: 0vw 0 1vw 2vw;
   background-color: #ffffff;
   border-color: black;
+  font-family: sans-serif;
+  font-weight: 100;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #filter-select button {
-  background-color: #abc6ff;
+  background-color: #ffffff;
   color: rgb(53, 53, 53);
   border: none;
-  padding: 1vw;
-  align-self: center;
-  cursor: pointer;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+}
+
+#filter-select input,
+#filter-select label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1vw 0 1vw 1vw;
+  font-size: 1.2vw;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+select {
+  display: flex;
+  justify-self: center;
+  width: 75%;
+  font-size: 1.2vw;
+  padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+}
+.on-sale-button {
+  display: flex;
+  align-items: center;
+  max-width: 75%;
+  margin: 1vw 0 1vw 2vw;
+  color: rgb(53, 53, 53);
+}
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-size: 3vw;
+  margin-top: 5vw;
+}
+
+#full-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* gap: 25vw; */
+  /* justify-items: center; */
+}
+
+#cart {
+  font-size: 2vw;
+  color: rgb(53, 53, 53);
+  border: none;
+  background-color: #ffffff;
+}
+
+#cart i {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.jacket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+  margin: 10vw 15vw 0 15vw;
+  gap: 5vw;
+}
+
+.jacket-grid img {
+  width: 20vw;
+}
+
+.jacket-discount {
+  text-decoration: line-through;
+}
+
+footer {
+  background-color: rgb(53, 53, 53);
+}
+
+footer h2 {
+  color: #ffffff;
+  margin: 0 0 0 2vw;
+  padding: 2vw 0 0 0;
+}
+
+.spesific-atribution {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.spesific-atribution p {
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 1.2vw;
+  color: #ffffff;
+  padding: 0 0 0 2vw;
+}
+
+#attributions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.attri-name {
+  font-family: sans-serif;
+  font-weight: 100;
+  color: #abc6ff;
+  font-style: italic;
+  font-size: 1.3vw;
 }
 
 /* body {

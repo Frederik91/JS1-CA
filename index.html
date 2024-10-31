@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="js/script.js" type="module"></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chathura:wght@100;300;400;700;800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
     <script
       src="https://kit.fontawesome.com/cc9325c3ed.js"
       crossorigin="anonymous"
@@ -13,10 +16,18 @@
   </head>
   <body>
     <nav>
-      <section id="top-logo"><h2>Rainydays.</h2></section>
+      <h2>Rainydays></h2>
       <section id="navbar">
         <div class="nav-buttons">
-          <a href="index.html">Home</a>
+          <a href="index.html"> Home</a>
+        </div>
+        <div class="nav-buttons">
+          <a href="index.html"> Home</a>
+        </div>
+        <div class="nav-buttons">
+          <button 
+            id="cart"><i class="fas fa-shopping-cart"></i></div>
+          </button>
         </div>
       </section>
     </nav>
@@ -38,38 +49,46 @@
       </div>
     </header>
     <main>
-      <section id="shop"><h1>Shop our jacket collections</h1>
+      <div id="shop"><h1>Shop our jacket collections</h1></div>
 
-      <button class="filter-button" id="filter-butn">
-        <p>filter</p>
-        <i class="fa-solid fa-filter"></i>
-      </button>
-
-      <div id="filter-select">
-        <label for="gender-filter"></label>
-        <select id="gender-filter">
-          <option value="all">All</option>
-          <option value="Female">Womens</option>
-          <option value="Male">Mens</option>
-        </select>
-
-        <label>
-            <input type="checkbox" id="sale-filter"/>
-            On sale
-        </label>
-
-        <button id="use-filter">
-            Use Filter
+      <section id="full-filter">
+        <button class="filter-button" id="filter-butn">
+          <p>filter</p>
+          <i class="fa-solid fa-filter"></i>
+       
         </button>
-</section>
-      </div>
+
+        <div id="filter-select">
+      
+          <select id="gender-filter">
+            <option value="all"><p>All</p></option>
+            <option value="Female">Womens</option>
+            <option value="Male">Mens</option>
+          </select>
+
+          <div class="on-sale-button">
+            <label>
+              <input type="checkbox" id="sale-filter" />
+              On sale
+            </label>
+          </div>
+          <button id="use-filter">Use Filter</button>
+        </div>
+      </section>
+
       <section id="jackets"></section>
     </main>
+    <footer>
+      <h2>Rainydays></h2>
+
+
+      <div id="attributions">
+        <div class="spesific-atribution"><p>Header photos desined by</p> <div class="attri-name">Freepik</div><p>|| Pictures generated with AI</p></div>
+        <div class="spesific-atribution"><p>Layout inspired by <div class="attri-name">Martine Sofie Kongsrud</div> </p></div>
+      </div>
+    </footer>
   </body>
 </html>
-
-
-
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -159,7 +178,7 @@
       <div class="maincontent">
         <div class="header"><h1>Jackets of the year</h1></div> -->
 
-      <!-- }
+<!-- }
       <div id="gender-filtering">
                       <div class="container-genre">
                           <select id="gender">
@@ -175,19 +194,19 @@
                         <div id="loading"> Loading Products</div>
                         <div id="error"> An error occured</div>
                         <div id="products-container"></div> -->
-        <!-- <div class="view-all">
+<!-- <div class="view-all">
           <div><button id="button-all"><h3>View all</h3></button></div>
           <div><button id="button-women"><h3>Womens</h3></button></div>
           <div><button id="button-men"><h3>Mens</h3></button></div>
       </div>
       <div id="product-list"></div>
   </div> -->
-        <!-- <div class="view-all">
+<!-- <div class="view-all">
           <div class="view-products"><button><h3>View all</h3></button></div>
           <div class="view-products"><button><h3>Womens</h3></button></div>
           <div class="view-products"><button><h3>Mens</h3></button></div>
         </div> -->
-        <!-- <div class="all-products">
+<!-- <div class="all-products">
           <div class="product">
             <h2>Monsen</h2>
             <img
@@ -209,7 +228,7 @@
               weather and tempratures<br /><br />2499,-
             </p>
           </div> -->
-          <!-- <div class="product">
+<!-- <div class="product">
             <h2>Tusna</h2>
             <img src="images/rainydays-tusna2.jpg" alt="some tekst">
             <p>
@@ -248,8 +267,8 @@
               A double layerd fleece jacket to keep you extra warm when the
               tempratures get low<br /><br />799,-
             </p>
-          </div> -->      
-          <!-- <div id="product-list"></div>
+          </div> -->
+<!-- <div id="product-list"></div>
         </div>
       </div>
 
@@ -293,4 +312,5 @@
     <script src="js/api.js"></script>
     <script src="js/product.js"></script>
   </body>
-</html> --> -->
+</html> -->
+-->
