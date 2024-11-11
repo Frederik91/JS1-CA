@@ -1,6 +1,7 @@
 const rainydaysAPI = "https://v2.api.noroff.dev/rainy-days";
 
 let jackets = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || []; // Hent handlekurven fra localStorage eller bruk en tom array
 
 async function getJackets() {
   try {
@@ -22,8 +23,8 @@ function renderJackets(product) {
   jacketsGrid.innerHTML = "";
 
   product.forEach((jacket) => {
-    const jacketContainer = document.createElement("a");
-    jacketContainer.href = `./products.html?id=${jacket.id}`;
+    const jacketContainer = document.createElement("div"); // Endret fra <a> til <div>
+    jacketContainer.className = "jacket-container";
 
     const img = document.createElement("img");
     img.src = jacket.image.url;
@@ -32,25 +33,153 @@ function renderJackets(product) {
     const jacketName = document.createElement("h2");
     jacketName.textContent = jacket.title.replace(/^Rainy Days\s*/, "");
 
-    jacketContainer.appendChild(img);
-    jacketContainer.appendChild(jacketName);
+    // Kall sizeSelect-funksjonen for å lage størrelsesvalg
+    const sizeSelectElement = createSizeSelect(jacket.sizes);
 
     const jacketPrice = document.createElement("p");
     jacketPrice.textContent = jacket.discountedPrice;
+
+    const addToCartButton = document.createElement("button");
+    addToCartButton.textContent = "Add to Cart";
+    addToCartButton.className = "add-to-cart";
+    addToCartButton.setAttribute("data-id", jacket.id);
+    addToCartButton.addEventListener("click", (event) => {
+      event.preventDefault(); // Forhindrer standard oppførsel
+      addToCart(jacket);
+    });
+
+    // Legg til elementene i riktig rekkefølge
+    jacketContainer.appendChild(img);
+    jacketContainer.appendChild(jacketName);
+    jacketContainer.appendChild(sizeSelectElement);
+    jacketContainer.appendChild(jacketPrice);
 
     if (jacket.onSale) {
       const jacketDiscount = document.createElement("p");
       jacketDiscount.textContent = jacket.price;
       jacketDiscount.className = "jacket-discount";
-      jacketContainer.appendChild(jacketPrice);
       jacketContainer.appendChild(jacketDiscount);
-    } else {
-      jacketContainer.appendChild(jacketPrice);
     }
+
+    jacketContainer.appendChild(addToCartButton);
 
     jacketsGrid.appendChild(jacketContainer);
   });
 }
+
+// Funksjon for å lage og returnere størrelsesvalg
+function createSizeSelect(sizes) {
+  const select = document.createElement("select");
+
+  sizes.forEach((size) => {
+    const option = document.createElement("option");
+    option.value = size;
+    option.text = size;
+    select.appendChild(option);
+  });
+
+  return select;
+}
+
+// Funksjon for å legge til produkt i handlekurven
+function addToCart(jacket) {
+  const existingItem = cart.find((item) => item.id === jacket.id);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    jacket.quantity = 1;
+    cart.push(jacket);
+  }
+  localStorage.setItem("cart", JSON.stringify(cart)); // Lagre handlekurven i localStorage
+  updateCartCount();
+  renderCart();
+}
+
+// Funksjon for å vise handlekurven
+function renderCart() {
+  const cartContainer = document.querySelector(".listCart");
+  cartContainer.innerHTML = ""; // Tømmer handlekurven før oppdatering
+
+  cart.forEach((item, index) => {
+    const cartItem = document.createElement("div");
+    cartItem.className = "item";
+
+    const itemImage = document.createElement("img");
+    itemImage.src = item.image.url;
+    itemImage.alt = item.image.alt;
+
+    const itemName = document.createElement("p");
+    itemName.textContent = item.title.replace(/^Rainy Days\s*/, "");
+
+    const itemPrice = document.createElement("p");
+    itemPrice.textContent = item.discountedPrice;
+
+    const quantityContainer = document.createElement("div");
+    quantityContainer.className = "quantity";
+
+    const minusButton = document.createElement("span");
+    minusButton.className = "minus";
+    minusButton.textContent = "<";
+    minusButton.addEventListener("click", () => updateQuantity(index, -1));
+
+    const quantity = document.createElement("span");
+    quantity.textContent = item.quantity; // Vis riktig mengde
+
+    const plusButton = document.createElement("span");
+    plusButton.className = "plus";
+    plusButton.textContent = ">";
+    plusButton.addEventListener("click", () => updateQuantity(index, 1));
+
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.addEventListener("click", () => removeFromCart(index));
+
+    quantityContainer.appendChild(minusButton);
+    quantityContainer.appendChild(quantity);
+    quantityContainer.appendChild(plusButton);
+
+    cartItem.appendChild(itemImage);
+    cartItem.appendChild(itemName);
+    cartItem.appendChild(itemPrice);
+    cartItem.appendChild(quantityContainer);
+    cartItem.appendChild(removeButton);
+
+    cartContainer.appendChild(cartItem);
+  });
+}
+
+// Funksjon for å oppdatere mengden av et produkt i handlekurven
+function updateQuantity(index, change) {
+  const item = cart[index];
+  item.quantity += change;
+  if (item.quantity < 1) {
+    item.quantity = 1;
+  }
+  localStorage.setItem("cart", JSON.stringify(cart)); // Oppdater localStorage
+  updateCartCount();
+  renderCart();
+}
+
+// Funksjon for å fjerne et produkt fra handlekurven
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  renderCart();
+}
+updateCartCount();
+renderCart();
+
+function updateCartCount() {
+  const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+  document.getElementById("cart-count").textContent = cartCount;
+}
+
+// Kall renderCart og updateCartCount for å vise handlekurven og oppdatere antallet ved oppstart
+renderCart();
+updateCartCount();
+
+// bildekarusell
 
 let currentIndex = 0;
 
@@ -77,6 +206,8 @@ document.getElementById("filter-butn").addEventListener("click", function () {
   }
 });
 
+// filter
+
 document.querySelector("#use-filter").addEventListener("click", function () {
   const genderFilter = document.querySelector("#gender-filter").value;
   const saleFilter = document.querySelector("#sale-filter").checked;
@@ -100,131 +231,24 @@ document.querySelector("#use-filter").addEventListener("click", function () {
   renderJackets(filteredProducts);
 });
 
-// const apiUrl = "https://v2.api.noroff.dev/rainy-days";
+// åpne lukke cart
 
-// fetch("https://v2.api.noroff.dev/rainy-days")
-//   .then((response) => response.json()) // Parse JSON from the response
-//   .then((reponse_json) => {
-//     displayProducts(reponse_json.data); // Access the "data" property to get products array
-//   })
-//   .catch((error) => console.error("Error fetching products:", error));
+let iconCart = document.querySelector("#cart");
+let closeCart = document.querySelector(".close");
+let body = document.querySelector("main");
+let listProductHTML = document.querySelector("#jackets");
 
-// function displayProducts(products) {
-//   const productList = document.getElementById("product-list");
-//   productList.innerHTML = ""; // Clear previous content
+let listProducts = [];
 
-//   products.forEach((product) => {
-//     const productItem = document.createElement("div");
-//     productItem.innerHTML = `
-//             <h2>${product.title}</h2>
-//             <p>${product.gender}</p>
-//             <p>${product.sizes}</p>
-//             <p>${product.description}</p>
-//             <p>Price: ${product.price}</p>
-//             <img src="${product.image.url}" alt="${product.image.alt}">
-//         `;
-//     productList.appendChild(productItem);
-//   });
-// }
+iconCart.addEventListener("click", () => {
+  body.classList.toggle("showCart");
+});
+closeCart.addEventListener("click", () => {
+  body.classList.toggle("showCart");
+});
 
-// // const viewAll = document.querySelector('.view-all')
+const initApp = () => {
+  fetch;
+};
 
-// // const paragraf = document.createElement('p')
-// // paragraf.className = 'text';
-
-// // viewAll.appendChild(paragraf);
-
-// // viewAll.innerHTML = 'hei';
-
-// const buttonWomen = document.getElementById("button-women");
-// buttonWomen.addEventListener(
-//   "click",
-//   function () {
-//     getFilteredProducts("Female");
-//   },
-//   false
-// );
-
-// // buttonAll.addEventListener('click', function(){filteredProducts = getFilteredProducts("Male") });
-// // buttonAll.addEventListener('click', function(){filteredProducts += getFilteredProducts("Female") });
-// //     displayProducts(filteredeProducts)
-// // buttonAll.addEventListener('click', function(){ getFilteredProducts("Male") }, false);
-// // buttonAll.addEventListener('click', function(){ getFilteredProducts("Female") }, false);
-
-// const buttonMen = document.getElementById("button-men");
-// buttonMen.addEventListener(
-//   "click",
-//   function () {
-//     getFilteredProducts("Male");
-//   },
-//   false
-// );
-
-// const buttonAll = document.getElementById("button-all"); // DON'T WORK...!
-// buttonAll.addEventListener(
-//   "click",
-//   function () {
-//     getFilteredProducts("Female", "Male");
-//   },
-//   false
-// );
-
-// function getFilteredProducts(filter) {
-//   fetch("https://v2.api.noroff.dev/rainy-days")
-//     .then((response) => response.json()) // Parse JSON from the response
-//     .then((reponse_json) => {
-//       filteredProducts = reponse_json.data.filter((dataElement) => {
-//         if (dataElement.gender === filter) return dataElement;
-//       });
-//       console.log(filteredProducts);
-//       displayProducts(filteredProducts); // Access the "data" property to get products array
-//     })
-//     .catch((error) => console.error("Error fetching products:", error));
-// }
-
-// function getAllProducts() {
-//     fetch('https://v2.api.noroff.dev/rainy-days')
-//     .then(response => {
-//     if (!response.ok) {
-//     throw new Error('Network response was not ok');  }
-//     return response.json();         })
-//         .then(response_json => {
-//              const allProducts = response_json;
-//                 console.log(allProducts); // Output all products to the consoledisplayProducts(allProducts); // Display all products }) .catch(error => console.error('Error fetching all products:', error)); }
-
-// function filterGender() {
-//     if(gender === "Female" ) {
-//     console.log('true');
-//    }
-// }
-
-// function filterSelection(gender) {
-//     var items = document.getElementsByClassName('womens');
-//     for (var i = 0; i < items.length; i++) {
-//       items[i].classList.remove('show');
-//       if (gender === 'Female' || items[i].classList.contains(category)) {
-//         items[i].classList.add('show');
-//       }
-//     }
-//   }
-
-//   // Initially show all items
-//   filterSelection('all');
-
-// document.getElementById("button-filter").addEventListener("click", function() {
-//     const gender = document.getElementById("gender").value;
-
-//     filterProducts(gender);
-// });
-
-// function filterProducts(gender) {
-//     // Use the global allProducts array to filter
-//     const filteredProducts = allProducts.filter(function(product) {
-//         const genderMatch = !gender || gender === 'all' || product.genre.toLowerCase() === gender.toLowerCase();
-
-//         return genderMatch;
-//     });
-
-//     // Display filtered products
-//     displayProducts(filteredProducts);
-// }
+initApp();
