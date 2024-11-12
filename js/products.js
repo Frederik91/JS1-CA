@@ -96,6 +96,7 @@ function updateCartCount() {
 // Kall updateCartCount for å oppdatere antallet ved oppstart
 updateCartCount();
 renderCart();
+
 function renderCart() {
   const cartContainer = document.querySelector(".listCart");
   cartContainer.innerHTML = ""; // Tømmer handlekurven før oppdatering
@@ -171,7 +172,7 @@ closeCart.addEventListener("click", () => {
 });
 
 const initApp = () => {
-  getJackets(); // Kall funksjonen for å hente jakkene
+  renderCart();
 };
 
 initApp();
