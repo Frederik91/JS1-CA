@@ -1,0 +1,105 @@
+#top-logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2vw;
+}
+
+#navbar {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-size: 1.8vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+#navbar a {
+  color: #000000;
+}
+
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  color: #000000;
+  font-size: 2.5vw;
+
+  max-width: fit-content;
+  /* margin: 0 0 0 2vw; */
+}
+
+a {
+  text-decoration: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 1vw 0 1vw 0;
+}
+
+/* nav #cart {
+  position: relative;
+  font-size: 2vw;
+  color: rgb(53, 53, 53);
+  border: none;
+  background-color: #ffffff;
+}
+
+nav #cart span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.8vw;
+  height: 1.8vw;
+  background-color: #ff0000;
+  border-radius: 50%;
+  color: #ffffff;
+  position: absolute;
+  font-size: 1.2vw;
+  top: 50%;
+  right: -10px;
+} */
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  background-color: rgb(53, 53, 53);
+}
+
+footer h2 {
+  color: #ffffff;
+  margin: 0 0 0 2vw;
+  padding: 2vw 0 0 0;
+}
+
+.spesific-atribution {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.spesific-atribution p {
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 1.2vw;
+  color: #ffffff;
+  padding: 0 0 0 2vw;
+}
+
+#attributions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.attri-name {
+  font-family: sans-serif;
+  font-weight: 100;
+  color: #abc6ff;
+  font-style: italic;
+  font-size: 1.3vw;
+}

@@ -23,8 +23,11 @@ function renderJackets(product) {
   jacketsGrid.innerHTML = "";
 
   product.forEach((jacket) => {
-    const jacketContainer = document.createElement("div"); // Endret fra <a> til <div>
+    const jacketContainer = document.createElement("div");
     jacketContainer.className = "jacket-container";
+
+    const link = document.createElement("a");
+    link.href = `products.html?id=${jacket.id}`;
 
     const img = document.createElement("img");
     img.src = jacket.image.url;
@@ -48,9 +51,9 @@ function renderJackets(product) {
       addToCart(jacket);
     });
 
-    // Legg til elementene i riktig rekkefølge
-    jacketContainer.appendChild(img);
-    jacketContainer.appendChild(jacketName);
+    link.appendChild(img);
+    link.appendChild(jacketName);
+    jacketContainer.appendChild(link);
     jacketContainer.appendChild(sizeSelectElement);
     jacketContainer.appendChild(jacketPrice);
 
@@ -175,7 +178,6 @@ function updateCartCount() {
   document.getElementById("cart-count").textContent = cartCount;
 }
 
-// Kall renderCart og updateCartCount for å vise handlekurven og oppdatere antallet ved oppstart
 renderCart();
 updateCartCount();
 

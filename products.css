@@ -1,0 +1,153 @@
+#cart {
+  position: relative;
+  font-size: 30px;
+  color: rgb(53, 53, 53);
+  border: none;
+  background-color: #ffffff;
+  max-width: fit-content;
+  float: right;
+  margin: 2vw 0 2vw 0;
+  display: grid;
+}
+
+main #cart span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.8vw;
+  height: 1.8vw;
+  background-color: #ff0000;
+  border-radius: 50%;
+  color: #ffffff;
+  position: absolute;
+  font-size: 16px;
+  top: 50%;
+  right: -10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 900px;
+  max-width: 90vw;
+  margin: auto auto 10vw auto;
+  text-align: center;
+  padding-top: 10px;
+  font-family: "poppins";
+  transition: transform 0.5s;
+}
+.cartTab {
+  width: 400px;
+  max-height: 900px;
+  background-color: #abc6ff;
+  color: rgb(53, 53, 53);
+  position: fixed;
+  inset: 0 -41vw 0 auto;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  transition: transform 0.5s;
+}
+
+main.showCart.cartTab {
+  inset: 0 0 0 auto;
+}
+
+body .showCart .container {
+  transform: translateX(-320px);
+}
+
+.cartTab h1 {
+  padding: 20px;
+  margin: 0;
+  font-family: "poppins";
+  font-weight: 300;
+  font-size: 36px;
+}
+
+.cartTab .btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn Button {
+  background-color: #ffffff;
+  border: none;
+  font-family: "poppins";
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cartTab .btn .close {
+  background-color: #ffffff;
+}
+
+.cartTab .listCart .item img {
+  width: 100%;
+}
+
+.cartTab .listCart .item {
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.listCart .quantity span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  color: rgb(53, 53, 53);
+  border-radius: 50%;
+}
+
+.listCart .quantity span:nth-child(2) {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.listCart .item:nth-child(even) {
+  background-color: #c6d8fa;
+}
+
+.listCart {
+  overflow: auto;
+}
+
+.listCart::-webkit-scrollbar {
+  width: 0;
+}
+
+.quantity .minus {
+  cursor: pointer;
+}
+.quantity .plus {
+  cursor: pointer;
+}
+
+.item button {
+  font-family: poppins;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+}
+
+.jacket-container select {
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-family: poppins;
+}
+
+.jacket-container select option {
+  font-family: poppins;
+}
+
+.jacket-container button {
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-family: poppins;
+  height: 40px;
+}
