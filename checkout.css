@@ -1,0 +1,108 @@
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#cart {
+  position: relative;
+  font-size: 30px;
+  color: rgb(53, 53, 53);
+  border: none;
+  background-color: #ffffff;
+  max-width: fit-content;
+}
+
+main #cart span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  color: #ffffff;
+  position: absolute;
+  font-size: 14px;
+  top: 50%;
+  right: -10px;
+}
+
+.cartTab {
+  background-color: #abc6ff;
+}
+
+.cartTab img {
+  width: 10vw;
+}
+
+.cartTab span {
+  font-family: poppins;
+  font-size: 18px;
+}
+
+.cartTab .listCart .item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.listCart .quantity span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  color: rgb(53, 53, 53);
+  border-radius: 50%;
+}
+
+.listCart .quantity span:nth-child(2) {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.listCart .item:nth-child(even) {
+  background-color: #c6d8fa;
+}
+
+.listCart {
+  overflow: auto;
+}
+
+.quantity .minus {
+  cursor: pointer;
+}
+.quantity .plus {
+  cursor: pointer;
+}
+
+.item button {
+  font-family: poppins;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+}
+
+fieldset {
+  width: 800px;
+}
+
+fieldset legend h1 {
+  font-family: poppins;
+  font-weight: 400;
+}
+
+fieldset legend {
+  font-family: poppins;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.subtotal-price #total-price {
+  font-family: poppins;
+  font-size: 18px;
+}

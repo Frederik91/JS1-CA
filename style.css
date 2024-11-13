@@ -154,11 +154,7 @@ p {
 
 #filter-cart {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-
-  /* gap: 25vw; */
-  /* justify-items: center; */
+  grid-template-columns: 8fr 1fr;
 }
 
 #filter-btn {
@@ -168,27 +164,26 @@ p {
   width: 50%;
 }
 
-#cart {
+#filter-cart #cart {
   position: relative;
   font-size: 36px;
   color: rgb(53, 53, 53);
   border: none;
   background-color: #ffffff;
   max-width: fit-content;
-  float: right;
 }
 
 main #cart span {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.8vw;
-  height: 1.8vw;
+  width: 20px;
+  height: 20px;
   background-color: #ff0000;
   border-radius: 50%;
   color: #ffffff;
   position: absolute;
-  font-size: 16px;
+  font-size: 14px;
   top: 50%;
   right: -10px;
 }
