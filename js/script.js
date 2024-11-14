@@ -259,9 +259,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var loader = document.getElementById("loader");
   var content = document.getElementById("content");
 
-  // Simuler en lastetid med setTimeout
   setTimeout(function () {
     loader.style.display = "none";
     content.style.display = "block";
-  }, 0); // 3 sekunder for demonstrasjon
+  }, 0);
 });
