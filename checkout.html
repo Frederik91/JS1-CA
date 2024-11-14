@@ -18,10 +18,20 @@
   </head>
   <body>
     <nav>
-      <h2>Rainydays></h2>
+      <a href="index.html"
+        ><img
+          src="images/RainyDays_Logo.png"
+          alt="The RainyDays logo containing a mountain and the text RainyDays "
+      /></a>
       <section id="navbar">
         <div class="nav-buttons">
           <a href="index.html"> Home</a>
+        </div>
+        <div class="nav-buttons">
+          <a href="checkout.html">
+            Cart and<br />
+            check out</a
+          >
         </div>
         <div class="nav-buttons">
           <a href="products.html"> Product</a>
@@ -29,7 +39,6 @@
       </section>
     </nav>
     <main>
-
       <button id="cart">
         <i class="fas fa-shopping-cart"><span id="cart-count">0</span></i>
       </button>
@@ -38,22 +47,15 @@
           <legend><h1>Shopping Cart</h1></legend>
           <div class="cartTab">
             <fieldset>
-                <div class="container">
-                    
-                    <div class="listCart">
-                  
+              <div class="container">
+                <div class="listCart">
                   <div class="item">
                     <div id="cart-item"></div>
-                  
-                  </div>
-                  
                   </div>
                 </div>
+              </div>
             </fieldset>
-
-            </div>
           </div>
-
         </fieldset>
 
         <fieldset>
@@ -61,151 +63,132 @@
           <div class="subtotal-price">
             <div id="total-price"></div>
           </div>
-          
+
           <div class="pyntelinje">
             <hr />
           </div>
         </fieldset>
-     
 
-      <form action="orderconfirmed.html" method="get">
-        <fieldset>
-          <legend>Shipping information 2</legend>
-          <div class="contact-information"><p>Contact information</p></div>
-          <label for="email">E-mail</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            class="form__input"
-            required
-          />
-          <label for="phone">Phone number</label>
-          <input
-            type="tel"
-            name="phone"
-            id="phone"
-            class="form__input"
-            required
-          />
-          <div class="contact-information"><p>Delivery Information</p></div>
-          <label for="first-name">First name</label>
-          <input
-            type="text"
-            name="first-name"
-            id="first-name"
-            class="form__input"
-            required
-          />
-          <label for="last-name">Last name</label>
-          <input
-            type="text"
-            name="last-name"
-            id="last-name"
-            class="form__input"
-            required
-          />
-          <br /><br />
-          <label for="adress">Street adress</label>
-          <input type="text" name="adress" id="adress" class="form__input" />
-          <div class="label-post-city">
-            <label for="post">Post code</label>
-            <div class="city-lable"><label for="city">City</label></div>
-          </div>
-          <div class="post-city">
-            <input
-              type="tel"
-              name="post"
-              id="post"
-              class="form__input"
-              required
-            />
-            <div class="lable-city"><label for="city">City</label></div>
-            <input
-              type="text"
-              name="city"
-              id="city"
-              class="form_city_input"
-              required
-            />
-          </div>
-          <label for="country">Country</label>
-          <input
-            type="text"
-            name="country"
-            id="country"
-            class="form__input"
-            required
-          />
-        </fieldset>
-
-        <fieldset>
-          <legend>Payment method 3</legend>
-          <div class="payment">
-            <div class="contact-information"><p>Choose payment methode</p></div>
-            <div class="radio-buttons">
-              <div class="icon-card">
-                <input
-                  type="radio"
-                  id="mastercard"
-                  name="method"
-                  value="mastercard"
-                />
-                <i class="fa fa-cc-mastercard"></i
-                ><label for="mastercard">Mastercard</label>
-              </div>
-              <div class="icon-card">
-                <input type="radio" id="paypal" name="method" value="paypal" />
-                <i class="fa fa-paypal"></i><label for="paypal">PayPal</label>
-              </div>
-              <div class="icon-card">
-                <input type="radio" id="visa" name="method" value="visa" />
-                <i class="fa fa-cc-visa"></i><label for="visa">Visa</label>
-              </div>
-              <br /><br />
-            </div>
-
-            <label for="card">Credit card</label>
-            <input type="tel" name="card" id="card" class="form__input" />
-            <div class="label-credit-card">
-              <label for="experation-date">Experation date</label>
-              <div class="cvv-lable"><label for="cvv">CVV</label></div>
-            </div>
-            <div class="date-cvv">
+        <form action="orderconfirmed.html" method="get">
+          <fieldset>
+            <legend>Shipping information 2</legend>
+            <div id="contact-information">
+              <div class="information"><p>Contact information</p></div>
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="email" class="form__input" />
+              <label for="phone">Phone number</label>
+              <input type="tel" name="phone" id="phone" class="form__input" />
+              <div class="information"><p>Delivery Information</p></div>
+              <label for="first-name">First name</label>
               <input
                 type="text"
-                name="experation-date"
-                id="experation-date"
+                name="first-name"
+                id="first-name"
                 class="form__input"
-                required
               />
-              <div class="cvv-lable1"><label for="cvv">CVV</label></div>
+              <label for="last-name">Last name</label>
               <input
-                type="tel"
-                name="cvv"
-                id="cvv"
-                class="form_city_input"
-                required
+                type="text"
+                name="last-name"
+                id="last-name"
+                class="form__input"
+              />
+              <br /><br />
+              <label for="adress">Street adress</label>
+              <input
+                type="text"
+                name="adress"
+                id="adress"
+                class="form__input"
+              />
+              <div class="label-post-city">
+                <label for="post">Post code</label>
+              </div>
+              <div class="post-city">
+                <input type="tel" name="post" id="post" class="form__input" />
+                <div class="lable-city"><label for="city">City</label></div>
+                <input
+                  type="text"
+                  name="city"
+                  id="city"
+                  class="form_city_input"
+                />
+              </div>
+              <label for="country">Country</label>
+              <input
+                type="text"
+                name="country"
+                id="country"
+                class="form__input"
               />
             </div>
+          </fieldset>
 
-            <div class="pyntelinje">
-              <hr />
-            </div>
+          <fieldset>
+            <legend>Payment method 3</legend>
+            <div id="payment">
+              <div class="information"><p>Choose payment methode</p></div>
+              <div class="radio-buttons">
+                <div class="icon-card">
+                  <input
+                    type="radio"
+                    id="mastercard"
+                    name="method"
+                    value="mastercard"
+                  />
+                  <i class="fa fa-cc-mastercard"></i
+                  ><label for="mastercard">Mastercard</label>
+                </div>
+                <div class="icon-card">
+                  <input
+                    type="radio"
+                    id="paypal"
+                    name="method"
+                    value="paypal"
+                  />
+                  <i class="fa fa-paypal"></i><label for="paypal">PayPal</label>
+                </div>
+                <div class="icon-card">
+                  <input type="radio" id="visa" name="method" value="visa" />
+                  <i class="fa fa-cc-visa"></i><label for="visa">Visa</label>
+                </div>
+                <br /><br />
+              </div>
 
-           
-            <div class="submit-button">
-              <a href="orderconfirmed.html"
-                ><input type="submit" value="PAY NOW" class="submit"
-              /></a>
+              <label for="card">Credit card</label>
+              <input type="tel" name="card" id="card" class="form__input" />
+              <div class="label-credit-card">
+                <label for="experation-date">Experation date</label>
+              </div>
+              <div class="date-cvv">
+                <input
+                  type="text"
+                  name="experation-date"
+                  id="experation-date"
+                  class="form__input"
+                />
+                <div class="cvv-lable1"><label for="cvv">CVV</label></div>
+                <input type="tel" name="cvv" id="cvv" class="form_city_input" />
+              </div>
+
+              <div class="pyntelinje">
+                <hr />
+              </div>
+
+              <div class="submit-button">
+                <input type="submit" value="PAY NOW" class="submit" />
+              </div>
             </div>
-          </div>
-        </fieldset>
-      </form>
-    </section>
+          </fieldset>
+        </form>
+      </section>
     </main>
     <footer>
-      <h2>Rainydays></h2>
+      <a href="index.html"
+        ><img
+          src="images/RainyDays_Logo-2.png"
+          alt="The RainyDays logo containing a mountain and the text RainyDays "
+      /></a>
 
       <div id="attributions">
         <div class="spesific-atribution">

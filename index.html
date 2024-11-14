@@ -8,25 +8,35 @@
     <link rel="stylesheet" href="navfooter.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chathura:wght@100;300;400;700;800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-   </style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
     <script
       src="https://kit.fontawesome.com/cc9325c3ed.js"
       crossorigin="anonymous"
     ></script>
-    <title>Document</title>
+    <title>RainyDays homepage</title>
   </head>
   <body>
     <nav>
-      <h2>Rainydays></h2>
+      <a href="index.html"
+        ><img
+          src="images/RainyDays_Logo.png"
+          alt="The RainyDays logo containing a mountain and the text RainyDays "
+      /></a>
       <section id="navbar">
         <div class="nav-buttons">
           <a href="index.html"> Home</a>
         </div>
+
+        <div class="nav-buttons">
+          <a href="checkout.html">
+            Cart and<br />
+            check out</a
+          >
+        </div>
+
         <div class="nav-buttons">
           <a href="products.html"> Product</a>
-        </div>
-        
         </div>
       </section>
     </nav>
@@ -48,71 +58,71 @@
       </div>
     </header>
     <main>
-      
-<div class="container">
-  <div class="cartTab"><h1>Shopping Cart</h1>
-  <div class="listCart">
-
-<div class="item">
-  <div id="cart-item"></div>
-
-</div>
-
-</div>
-
-  <div class="btn">
-    <button class="close">CLOSE</button>
-    <button class="checkOut">Check out</button>
-  </div>
-  </div>
-
-      <div id="shop"><h1>Shop our jacket collections</h1></div>
-
-      <section id="filter-cart">
-  <div id="filter-btn">
-        <button class="filter-button" id="filter-butn">
-          <p>filter</p>
-          <i class="fa-solid fa-filter"></i>
-       
-        </button>
-
-        <div id="filter-select">
-      
-          <select id="gender-filter">
-            <option value="all"><p>All</p></option>
-            <option value="Female">Womens</option>
-            <option value="Male">Mens</option>
-          </select>
-
-          <div class="on-sale-button">
-            <label>
-              <input type="checkbox" id="sale-filter" />
-              On sale
-            </label>
+      <div class="container">
+        <div class="cartTab">
+          <h1>Shopping Cart</h1>
+          <div class="listCart">
+            <div class="item">
+              <div id="cart-item"></div>
+            </div>
           </div>
-          <button id="use-filter">Use Filter</button>
-        </div></div>
 
-          <button 
-            id="cart"><i class="fas fa-shopping-cart"><span id="cart-count">0</span></i>
-            
+          <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">
+              <a href="checkout.html"> CHECK OUT</a>
+            </button>
+          </div>
+        </div>
+
+        <div id="shop"><h1>Shop our jacket collections</h1></div>
+
+        <section id="filter-cart">
+          <div id="filter-btn">
+            <button class="filter-button" id="filter-butn">
+              <p>filter</p>
+              <i class="fa-solid fa-filter"></i>
+            </button>
+
+            <div id="filter-select">
+              <select id="gender-filter">
+                <option value="all"><p>All</p></option>
+                <option value="Female">Womens</option>
+                <option value="Male">Mens</option>
+              </select>
+
+              <div class="on-sale-button">
+                <label>
+                  <input type="checkbox" id="sale-filter" />
+                  On sale
+                </label>
+              </div>
+              <button id="use-filter">Use Filter</button>
+            </div>
+          </div>
+
+          <button id="cart">
+            <i class="fas fa-shopping-cart"><span id="cart-count">0</span></i>
           </button>
-      </section>
+        </section>
 
-      <section id="jackets"></section>
-      
-</div>
+        <section id="jackets"></section>
+      </div>
     </main>
     <footer>
-      <h2>Rainydays></h2>
-
+      <a href="index.html"
+        ><img
+          src="images/RainyDays_Logo-2.png"
+          alt="The RainyDays logo containing a mountain and the text RainyDays "
+      /></a>
 
       <div id="attributions">
-        <div class="spesific-atribution"><p>Header photo design by</p> <div class="attri-name">Freepik</div><p>|| Pictures generated with AI</p></div>
-        
+        <div class="spesific-atribution">
+          <p>Header photo design by</p>
+          <div class="attri-name">Freepik</div>
+          <p>|| Pictures generated with AI</p>
+        </div>
       </div>
     </footer>
   </body>
 </html>
-
-

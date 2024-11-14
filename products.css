@@ -1,4 +1,4 @@
-#cart {
+/* #cart {
   position: relative;
   font-size: 30px;
   color: rgb(53, 53, 53);
@@ -24,3 +24,7 @@ main #cart span {
   top: 50%;
   right: -10px;
 }
+
+img {
+  max-width: 90px;
+} */

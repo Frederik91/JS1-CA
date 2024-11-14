@@ -1,0 +1,22 @@
+#icon i {
+  font-size: 20vw;
+  color: #abc6ff;
+}
+
+h1 {
+  font-family: poppins;
+  font-weight: 300;
+}
+
+p {
+  font-family: poppins;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5vw 0 10vw 0;
+}

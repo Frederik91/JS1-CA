@@ -5,6 +5,10 @@ section {
   align-items: center;
 }
 
+main {
+  margin: 0 0 10vw 0;
+}
+
 #cart {
   position: relative;
   font-size: 30px;
@@ -12,6 +16,8 @@ section {
   border: none;
   background-color: #ffffff;
   max-width: fit-content;
+  cursor: pointer;
+  display: none;
 }
 
 main #cart span {
@@ -27,6 +33,7 @@ main #cart span {
   font-size: 14px;
   top: 50%;
   right: -10px;
+  display: none;
 }
 
 .cartTab {
@@ -85,24 +92,78 @@ main #cart span {
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 fieldset {
   width: 800px;
+  margin: 0 0 2vw 0;
 }
 
 fieldset legend h1 {
   font-family: poppins;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 fieldset legend {
   font-family: poppins;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 24px;
 }
 
 .subtotal-price #total-price {
   font-family: poppins;
   font-size: 18px;
+}
+
+p {
+  font-family: poppins;
+  font-weight: 400;
+}
+
+#contact-information {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+#contact-information input {
+  max-width: 200px;
+}
+
+#contact-information label {
+  font-family: poppins;
+  font-weight: 300;
+}
+
+#payment {
+  display: grid;
+  grid-row: 1fr;
+}
+
+#payment input {
+  max-width: 200px;
+}
+
+#payment label {
+  font-family: poppins;
+  font-weight: 300;
+}
+
+.submit-button input {
+  background-color: #abc6ff;
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+  font-family: poppins;
+  font-weight: 600;
+  margin: 0 0 2vw 0;
+  cursor: pointer;
+}
+
+.pyntelinje {
+  margin: 0 0 2vw 0;
+}
+
+.date-cvv {
+  margin: 0 0 2vw 0;
 }

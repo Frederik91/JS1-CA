@@ -21,12 +21,15 @@ h2 {
   font-weight: 100;
   color: #000000;
   font-size: 2.5vw;
-
   max-width: fit-content;
-  /* margin: 0 0 0 2vw; */
 }
 
-a {
+nav img {
+  width: 10vw;
+  margin: 0 0 0 2vw;
+}
+
+nav a {
   text-decoration: none;
   font-family: "Bebas Neue", sans-serif;
   font-weight: 100;
@@ -37,29 +40,6 @@ nav {
   grid-template-columns: 1fr 2fr;
   padding: 1vw 0 1vw 0;
 }
-
-/* nav #cart {
-  position: relative;
-  font-size: 2vw;
-  color: rgb(53, 53, 53);
-  border: none;
-  background-color: #ffffff;
-}
-
-nav #cart span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1.8vw;
-  height: 1.8vw;
-  background-color: #ff0000;
-  border-radius: 50%;
-  color: #ffffff;
-  position: absolute;
-  font-size: 1.2vw;
-  top: 50%;
-  right: -10px;
-} */
 
 main {
   display: flex;
@@ -75,6 +55,11 @@ footer h2 {
   color: #ffffff;
   margin: 0 0 0 2vw;
   padding: 2vw 0 0 0;
+}
+
+footer img {
+  width: 10vw;
+  margin: 2vw 0 2vw 2vw;
 }
 
 .spesific-atribution {
