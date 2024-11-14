@@ -8,7 +8,7 @@ async function getJacketById() {
   try {
     const result = await fetch(`${rainydaysAPI}/${jacketId}`);
     const { data } = await result.json();
-    console.log(data);
+
     renderJacketByID(data);
   } catch (error) {
     console.error("Error fetching jacket:", error);

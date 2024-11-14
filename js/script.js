@@ -8,7 +8,7 @@ async function getJackets() {
     const response = await fetch(rainydaysAPI);
     const { data } = await response.json();
     jackets = data;
-    console.log(data);
+
     renderJackets(jackets);
   } catch (error) {
     console.error("Error fetching jackets:", error);
@@ -98,7 +98,7 @@ function addToCart(jacket) {
   renderCart();
 }
 
-// Funksjon for å vise handlekurven
+// Vise handlekurven
 function renderCart() {
   const cartContainer = document.querySelector(".listCart");
   cartContainer.innerHTML = ""; // Tømmer handlekurven før oppdatering
@@ -151,7 +151,7 @@ function renderCart() {
   });
 }
 
-// Funksjon for å oppdatere mengden av et produkt i handlekurven
+// Oppdatere mengden av et produkt i handlekurven
 function updateQuantity(index, change) {
   const item = cart[index];
   item.quantity += change;
@@ -163,7 +163,7 @@ function updateQuantity(index, change) {
   renderCart();
 }
 
-// Funksjon for å fjerne et produkt fra handlekurven
+// Fjerne et produkt fra handlekurven
 function removeFromCart(index) {
   cart.splice(index, 1);
   localStorage.setItem("cart", JSON.stringify(cart));
