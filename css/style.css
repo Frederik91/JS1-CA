@@ -392,5 +392,5 @@ body .showCart .container {
 }
 
 .content {
-  display: none; /* Skjul innholdet til loaderen er borte */
+  display: none;
 }
