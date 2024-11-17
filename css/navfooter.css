@@ -88,3 +88,7 @@ footer img {
   font-style: italic;
   font-size: 1.3vw;
 }
+
+.hidden {
+  display: none;
+}
